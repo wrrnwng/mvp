@@ -31,6 +31,8 @@ Want to tell your boss the reason you need to take off from work an hour early? 
 ## Solution ##
 No matter if it's a special event or a scheduled one, we can provide you peace-of-mind to help you have a better commute to work or back home. Bay Bridge is closed over the weekend for retrofitting? We take that into account. Giants are playing the Dodgers this weekend? We will help you fit that around your schedule. We can even tell you how many stations to go in the opposite direction for you to snag that seat on the Fremont train!
 
+ - Train crowding is predicted based upon events occuring along BART stations. Currently, we predict train crowding based on Giants and A's games. If you trip originates or passes through affected stations, that would constitute an affect trip. If your scheduled trip begins after the 8th inning, this would have an adverse affect on your commute. Scheduled starts also affect station crowding, even if the train you plan to take is going in the opposite direction if you begin or end your trip at the affected stations. Stations affected are Coliseum, Embarcadero and Montgomery stations.
+
   > The worst part of my day is usually my commute. If I can make the commute just a little bit better for me or my friends, I feel that I've made a dent on this world somehow.
   - Warren Wong, CEO of Sardine Can
 
