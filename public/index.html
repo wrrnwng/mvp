@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="sardineCan">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sardine Can</title>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <style>
+    html                    { overflow-y:scroll; }
+    body                    { padding-top:50px; }
+    #trip-list              { margin-bottom:30px; }
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+  <script src="core.js"></script>
+</head>
+<body ng-controller="mainController">
+  <div class="container">
+
+    <!-- Title Element -->
+    <div class="jumbotron text-center">
+      <h1>Sardine Can</h1>
+      <h3>Avoid the crush, use our app!</h3>
+    </div>
+
+    <div id="trip-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Choose a starting station" ng-model="formData.beginStn">
+          </div>
+         <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Choose an ending station" ng-model="formData.endStn">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTrip()">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- List Prior Trips -->
+    <div id="trip-list" class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkbox" ng-repeat="trip in trips">
+          <label>
+            <input type="checkbox" ng-click="deleteTrip(trip._id)"> {{ trip.beginStn }}
+          </label>
+        </div>
+      </div>      
+    </div>
+
+  </div>
+</body>
+</html>
