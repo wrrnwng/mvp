@@ -16,29 +16,32 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Sardine Can ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Predict the likelihood of getting a seat on BART on your way home before heading to the station! ##
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+Dog tired from a long day at work? Would you give your first-born child for that seat on BART today? Well, find out whether the train is overcrowded because of events BEFORE you leave your office! Sardine Can uses cutting-edge technology to predict how crowded your BART train or Muni bus will be before ever leaving.
 
 ## Problem ##
-  > Describe the problem your product solves.
+Need an excuse to have that drink with coworkers before trekking over to the station? We'll do that for you!
+
+Have to decide whether surge pricing on Uber is worth it compared to the Sardine Can that is BART right after a Giants game? We'll help you make that decision!
+
+Want to tell your boss the reason you need to take off from work an hour early? Tell'em Sardine Can wants you to leave early! They'll believe you! They're Sardine Can customers too!
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+No matter if it's a special event or a scheduled one, we can provide you peace-of-mind to help you have a better commute to work or back home. Bay Bridge is closed over the weekend for retrofitting? We take that into account. Giants are playing the Dodgers this weekend? We will help you fit that around your schedule. We can even tell you how many stations to go in the opposite direction for you to snag that seat on the Fremont train!
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > The worst part of my day is usually my commute. If I can make the commute just a little bit better for me or my friends, I feel that I've made a dent on this world somehow.
+  - Warren Wong, CEO of Sardine Can
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+Visit [sardinecan.io]() for a free trial now! Start making your life better by making the worst part of the day go away!
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+## Testimonials ##
+  > I love this app! I've been able to go to happy hour on horrendous commute days instead of sweating on the platform waiting for my packed Dublin/Pleasanton train. Sardine Can has made my life better in immeasurable ways!
+  - Bob Smith, Tracy, CA
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+## What to do next? ##
+Tell us what you think! We would love to hear feedback from you on anything, our app, your commute, etc. Contact us at [feedback@sardinecan.io]()
