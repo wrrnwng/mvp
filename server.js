@@ -24,6 +24,11 @@ var Trip = mongoose.model('Trip', {
   endStn: String
 });
 
+var Station = mongoose.model('Station', {
+  name: String,
+  abbr: String
+});
+
 // routes
 app.get('/api/trips', function(req, res) {
   Trip.find(function(err, trips) {
