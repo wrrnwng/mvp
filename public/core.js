@@ -42,8 +42,8 @@ app.controller('mainController', function($scope, $http) {
   $scope.getStations = function() {
     $http.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V')
       .success(function(data) {
-        $scope.stations = data;
-        console.log(data);
+        $scope.stations = $.parseXML(data);
+        console.log($scope.stations);
       })
       .error(function(data) {
         console.log('Error:', data);
