@@ -27,27 +27,38 @@
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form>
           <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="Choose a starting station" ng-model="formData.beginStn">
+            {{ formData.beginStn }}
+            <select class="form-control input-lg text-center" ng-model="formData.beginStn" ng-change="getStationInfo(formData.beginStn)">
+              <option value="" disabled selected>Choose a starting station</option>
+              <option ng-repeat="station in stations" value="{{ station.abbr }}">{{ station.name }}</option>
+            </select>
           </div>
-         <div class="form-group">
+
+<!--           <div class="form-group">
             <input type="text" class="form-control input-lg text-center" placeholder="Choose an ending station" ng-model="formData.endStn">
+            <select ng-model="formData.endStn">
+              <option ng-repeat="station in stations">{{ station.name }}</option>
+            </select>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" ng-click="createTrip()">Take that train!</button>
-        </form>
+ -->        </form>
       </div>
     </div>
 
-    <!-- Station List -->
-    <div id="trip-list" class="row">
-      <div class="col-sm-4 col-sm-offset-4">
-        <div class="checkbox" ng-repeat="station in stations">
-        {{station.name}}
+    <!-- station info -->
+<div id="station-info" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <div ng-repeat="estTime in estTimes">
+          <div>
+            {{ estTime.destination }}
+          </div>
         </div>
       </div>      
     </div>
 
+
     <!-- List Prior Trips -->
-    <div id="trip-list" class="row">
+<!--     <div id="trip-list" class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <div class="checkbox" ng-repeat="trip in trips">
           <label>
@@ -56,7 +67,7 @@
         </div>
       </div>      
     </div>
-
+ -->
   </div>
 </body>
 </html>
