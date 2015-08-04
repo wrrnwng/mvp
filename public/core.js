@@ -47,8 +47,8 @@ app.controller('mainController', function($scope, $http) {
           $scope.stations = $scope.stations || [];
           $scope.stations.push({name: $($(stations[i]).find('name')).text(),
                                 abbr: $($(stations[i]).find('abbr')).text()});
+
         }
-        // console.log($scope.stations);
       })
       .error(function(data) {
         console.log('Error:', data);
@@ -59,16 +59,34 @@ app.controller('mainController', function($scope, $http) {
   $scope.getStationInfo = function(abbr) {
     $scope.estTimes = [];
     console.log(abbr);
+
+    $http.get('http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=' + abbr + '&key=MW9S-E7SL-26DU-VV8V')
+      .success(function(data) {
+        var intro = $($.parseXML(data)).find('intro');
+        var food = $($.parseXML(data)).find('food');
+        var shopping = $($.parseXML(data)).find('shopping');
+        var attractions = $($.parseXML(data)).find('attractions');
+        $scope.stationInfo = {
+          intro: intro,
+          food: food,
+          shopping: shopping,
+          attractions: attractions
+        };
+      })
+      .error(function(data) {
+        console.log('Error:', data);
+      });  
+
     $http.get('http://api.bart.gov/api/etd.aspx?cmd=etd&orig=' + abbr + '&key=MW9S-E7SL-26DU-VV8V')
       .success(function(data) {
         var estTimes = $($.parseXML(data)).find('etd');
         for (var i = 0; i < estTimes.length; i++) {
-          console.log(estTimes[i]);
+
           $scope.estTimes.push({destination: $($(estTimes[i]).find('destination')).text(),
                                 minutes: $($($(estTimes[i]).find('minutes')).first()).text(),
                                 color: $($($(estTimes[i]).find('color')).first()).text()});
         }
-        console.log($scope.estTimes);
+        // console.log($scope.estTimes);
         // console.log(data);
       })
       .error(function(data) {
