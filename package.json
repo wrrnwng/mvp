@@ -1,14 +1,15 @@
 {
-  "name"         : "sardineCan",
-  "version"      : "0.0.0",
-  "description"  : "Public transit, in comfort.",
-  "main"         : "server.js",
-  "author"       : "Warren Wong",
-  "dependencies" : {
-    "express"    : "~4.7.2",
-    "mongoose"   : "~3.6.2",
-    "morgan"     : "~1.2.2",
+  "name": "sardineCan",
+  "version": "0.0.0",
+  "description": "Public transit, in comfort.",
+  "main": "server.js",
+  "author": "Warren Wong",
+  "dependencies": {
     "body-parser": "~1.5.2",
-    "method-override": "~2.1.2"
+    "bower": "^1.4.1",
+    "express": "~4.7.2",
+    "method-override": "~2.1.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2"
   }
 }
