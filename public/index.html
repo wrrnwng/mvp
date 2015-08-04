@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sardine Can</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style.css">
   <style>
     html                    { overflow-y:scroll; }
     body                    { padding-top:50px; }
@@ -49,9 +50,9 @@
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form>
           <div ng-repeat="estTime in estTimes">
-            <div>
-              <button type="button" class="btn btn-primary btn-lg">{{ estTime.destination }}</button>
-              {{ formatTime(estTime.minutes) }}
+            <div class="destination">
+              <button type="button" class="btn btn-lg">{{ estTime.destination }}</button>
+              <div>{{ formatTime(estTime.minutes) }}</div>
             </div>
           </div>
         </form>
