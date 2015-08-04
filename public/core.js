@@ -7,7 +7,7 @@ app.config(function($httpProvider) {
 
 app.controller('mainController', function($scope, $http) {
   $scope.formData = {};
-
+  
   $http.get('/api/trips')
     .success(function(data) {
       $scope.trips = data;
@@ -40,9 +40,13 @@ app.controller('mainController', function($scope, $http) {
       });
   };
   $scope.getStations = function() {
+    $scope.stations = [];
     $http.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V')
       .success(function(data) {
-        $scope.stations = $.parseXML(data);
+        var stations = $($.parseXML(data)).find('stations')[0].children;
+        for (var i = 0; i < stations.length; i++) {
+          $scope.stations.push({name: $($(stations[i]).find('name')).text()});
+        }
         console.log($scope.stations);
       })
       .error(function(data) {
