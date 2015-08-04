@@ -65,7 +65,8 @@ app.controller('mainController', function($scope, $http) {
         for (var i = 0; i < estTimes.length; i++) {
           console.log(estTimes[i]);
           $scope.estTimes.push({destination: $($(estTimes[i]).find('destination')).text(),
-                                minutes: $($($(estTimes[i]).find('minutes')).first()).text()});
+                                minutes: $($($(estTimes[i]).find('minutes')).first()).text(),
+                                color: $($($(estTimes[i]).find('color')).first()).text()});
         }
         console.log($scope.estTimes);
         // console.log(data);
@@ -77,9 +78,9 @@ app.controller('mainController', function($scope, $http) {
 
   $scope.formatTime = function(time) {
     if (parseInt(time)) {
-      return 'Train will be leaving in ' + time + ' minute(s)';
+      return time + ' min';
     } else {
-      return 'Train is currently on the platform';
+      return time;
     }
   };
 

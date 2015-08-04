@@ -50,10 +50,9 @@
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form>
           <div ng-repeat="estTime in estTimes">
-            <div class="destination">
-              <button type="button" class="btn btn-lg">{{ estTime.destination }}</button>
-              <div>{{ formatTime(estTime.minutes) }}</div>
-            </div>
+            <ul class="nav nav-pills" role="tablist" class="destination {{ estTime.color.toLowerCase() }}">
+              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }}<span class="badge">{{ formatTime(estTime.minutes) }}</span></a></li>
+            </ul>
           </div>
         </form>
       </div>      
