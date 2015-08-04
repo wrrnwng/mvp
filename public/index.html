@@ -19,8 +19,8 @@
   <div class="container">
 
     <!-- Title Element -->
-    <div class="page-header">
-      <h1>Sardine Can<small>Avoid the crush, use our app!</small></h1>
+    <div class="page-header text-center">
+      <h1>Sardine Can <small>Avoid the crush, use our app!</small></h1>
     </div>
 
     <div id="trip-form" class="row">
@@ -50,7 +50,7 @@
         <form>
           <div ng-repeat="estTime in estTimes">
             <ul class="nav nav-pills" role="tablist" class="destination {{ estTime.color.toLowerCase() }}">
-              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }}<span class="badge">{{ formatTime(estTime.minutes) }}</span></a></li>
+              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }} <span class="badge">{{ formatTime(estTime.minutes) }}</span></a></li>
             </ul>
           </div>
         </form>
