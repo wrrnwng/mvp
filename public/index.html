@@ -32,7 +32,7 @@
          <div class="form-group">
             <input type="text" class="form-control input-lg text-center" placeholder="Choose an ending station" ng-model="formData.endStn">
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTrip()">Add</button>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTrip()">Take that train!</button>
         </form>
       </div>
     </div>
@@ -42,7 +42,7 @@
       <div class="col-sm-4 col-sm-offset-4">
         <div class="checkbox" ng-repeat="trip in trips">
           <label>
-            <input type="checkbox" ng-click="deleteTrip(trip._id)"> {{ trip.beginStn }}
+            <input type="checkbox" ng-click="deleteTrip(trip._id)"> From {{ trip.beginStn }} to {{ trip.endStn }}
           </label>
         </div>
       </div>      
