@@ -57,14 +57,15 @@ app.controller('mainController', function($scope, $http) {
   $scope.getStations();
 
   $scope.getStationInfo = function(abbr) {
+    $scope.estTimes = [];
     console.log(abbr);
     $http.get('http://api.bart.gov/api/etd.aspx?cmd=etd&orig=' + abbr + '&key=MW9S-E7SL-26DU-VV8V')
       .success(function(data) {
         var estTimes = $($.parseXML(data)).find('etd');
         for (var i = 0; i < estTimes.length; i++) {
           console.log(estTimes[i]);
-          $scope.estTimes = $scope.estTimes || [];
-          $scope.estTimes.push({destination: $($(estTimes[i]).find('destination')).text()});
+          $scope.estTimes.push({destination: $($(estTimes[i]).find('destination')).text(),
+                                minutes: $($($(estTimes[i]).find('minutes')).first()).text()});
         }
         console.log($scope.estTimes);
         // console.log(data);
@@ -73,5 +74,14 @@ app.controller('mainController', function($scope, $http) {
         console.log('Error:', data);
       });  
   };
+
+  $scope.formatTime = function(time) {
+    if (parseInt(time)) {
+      return 'Train will be leaving in ' + time + ' minute(s)';
+    } else {
+      return 'Train is currently on the platform';
+    }
+  };
+
 
 });

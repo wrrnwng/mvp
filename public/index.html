@@ -27,7 +27,6 @@
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form>
           <div class="form-group">
-            {{ formData.beginStn }}
             <select class="form-control input-lg text-center" ng-model="formData.beginStn" ng-change="getStationInfo(formData.beginStn)">
               <option value="" disabled selected>Choose a starting station</option>
               <option ng-repeat="station in stations" value="{{ station.abbr }}">{{ station.name }}</option>
@@ -46,13 +45,16 @@
     </div>
 
     <!-- station info -->
-<div id="station-info" class="row">
+    <div id="station-info" class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
-        <div ng-repeat="estTime in estTimes">
-          <div>
-            {{ estTime.destination }}
+        <form>
+          <div ng-repeat="estTime in estTimes">
+            <div>
+              <button type="button" class="btn btn-primary btn-lg">{{ estTime.destination }}</button>
+              {{ formatTime(estTime.minutes) }}
+            </div>
           </div>
-        </div>
+        </form>
       </div>      
     </div>
 
