@@ -6,6 +6,7 @@
   <title>Sardine Can</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <style>
     html                    { overflow-y:scroll; }
     body                    { padding-top:50px; }
@@ -50,7 +51,7 @@
         <form>
           <div ng-repeat="estTime in estTimes">
             <ul class="nav nav-pills" role="tablist" class="destination {{ estTime.color.toLowerCase() }}">
-              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }} <span class="badge">{{ formatTime(estTime.minutes) }}</span></a></li>
+              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }} <span class="badge">{{ formatTime(estTime.minutes) }}</span></a><i class="fa fa-bicycle"></i></li>
             </ul>
           </div>
         </form>
