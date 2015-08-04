@@ -1,11 +1,11 @@
 {
-  "name": "mvp",
+  "name": "sardineCan",
   "version": "0.0.0",
   "homepage": "https://github.com/wrrnwng/2015-06-mvp",
   "authors": [
     "Warren Wong <wrrnwng@gmail.com>"
   ],
-  "main": "public/index.html",
+  "main": "index.html",
   "license": "MIT",
   "ignore": [
     "**/.*",
