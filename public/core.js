@@ -1,5 +1,10 @@
 var app = angular.module('sardineCan', []);
 
+app.config(function($httpProvider) {
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
+
 app.controller('mainController', function($scope, $http) {
   $scope.formData = {};
 
@@ -34,4 +39,15 @@ app.controller('mainController', function($scope, $http) {
         console.log('Error:', data);
       });
   };
+  $scope.getStations = function() {
+    $http.get('http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V')
+      .success(function(data) {
+        // $scope.trips = data;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error:', data);
+      });  
+  };
+  $scope.getStations();
 });
