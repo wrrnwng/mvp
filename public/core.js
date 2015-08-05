@@ -6,6 +6,7 @@ app.config(function($httpProvider) {
 });
 
 app.controller('mainController', function($scope, $http) {
+  $scope.stationSelected = false;
   $scope.formData = {};
   
   $http.get('/api/trips')
@@ -57,6 +58,7 @@ app.controller('mainController', function($scope, $http) {
   $scope.getStations();
 
   $scope.getStationInfo = function(abbr) {
+    $scope.stationSelected = true;
     $scope.estTimes = [];
     console.log(abbr);
 
@@ -66,12 +68,14 @@ app.controller('mainController', function($scope, $http) {
         var food = $($($.parseXML(data)).find('food')).text();
         var shopping = $($($.parseXML(data)).find('shopping')).text();
         var attractions = $($($.parseXML(data)).find('attractions')).text();
+        // var routes = $($.parseXML(data)).find('route');
         $scope.stationInfo = {
           intro: intro,
           food: food,
           shopping: shopping,
           attractions: attractions
         };
+        console.log($($.parseXML(data)).find('route'));
       })
       .error(function(data) {
         console.log('Error:', data);
@@ -90,7 +94,6 @@ app.controller('mainController', function($scope, $http) {
           });
         }
         // console.log($scope.estTimes);
-        console.log(data);
       })
       .error(function(data) {
         console.log('Error:', data);
