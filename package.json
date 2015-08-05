@@ -5,7 +5,6 @@
   "main": "server.js",
   "author": "Warren Wong",
   "dependencies": {
-    "node": "0.12.7",
     "body-parser": "~1.5.2",
     "bower": "^1.4.1",
     "express": "~4.7.2",
@@ -15,5 +14,6 @@
   },
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install"
-  }
+  },
+  "engine": "node >= 0.12.7"
 }
