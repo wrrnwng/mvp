@@ -60,7 +60,7 @@ app.controller('mainController', function($scope, $http) {
   $scope.getStationInfo = function(abbr) {
     $scope.stationSelected = true;
     $scope.estTimes = [];
-    console.log(abbr);
+    $scope.routes = [];
 
     $http.get('http://api.bart.gov/api/stn.aspx?cmd=stninfo&orig=' + abbr + '&key=MW9S-E7SL-26DU-VV8V')
       .success(function(data) {
@@ -68,14 +68,17 @@ app.controller('mainController', function($scope, $http) {
         var food = $($($.parseXML(data)).find('food')).text();
         var shopping = $($($.parseXML(data)).find('shopping')).text();
         var attractions = $($($.parseXML(data)).find('attractions')).text();
-        // var routes = $($.parseXML(data)).find('route');
+        var routes = $($.parseXML(data)).find('route');
         $scope.stationInfo = {
           intro: intro,
           food: food,
           shopping: shopping,
           attractions: attractions
         };
-        console.log($($.parseXML(data)).find('route'));
+        for (var i = 0; i < routes.length; i++) {
+          $scope.routes.push($(routes[i]).text().trim());
+        }
+        console.log($scope.routes);
       })
       .error(function(data) {
         console.log('Error:', data);
