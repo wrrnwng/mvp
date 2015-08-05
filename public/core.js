@@ -76,9 +76,9 @@ app.controller('mainController', function($scope, $http) {
           attractions: attractions
         };
         for (var i = 0; i < routes.length; i++) {
-          var route = $(routes[i]).text().trim().split(' ')[1]
-
-          $http.get('http://api.bart.gov/api/route.aspx?cmd=routeinfo&route="' + route + '"&key=MW9S-E7SL-26DU-VV8V')
+          var route = $(routes[i]).text().trim().split(' ')[1];
+          console.log(route);
+          $http.get('http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=' + route + '&key=MW9S-E7SL-26DU-VV8V')
             .success(function(data) {
               $scope.routes.push(data);
               console.log(data);
