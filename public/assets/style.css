@@ -36,3 +36,14 @@
   border-width: 5px;
   border-radius: 10px;
 }
+
+.white {
+  border-color: grey;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+}
+
+#station-info {
+  margin: 20px;
+}

@@ -38,8 +38,13 @@
     </div>
 
     <!-- station info -->
-    <div id="station-info">
-      
+    <div id="station-info" class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div>{{ stationInfo.intro }}</div>
+        <div>{{ stationInfo.food }}</div>
+        <div>{{ stationInfo.shopping }}</div>
+        <div>{{ stationInfo.attractions }}</div>
+      </div>
     </div>
 
     <div id="train-info" class="row">
@@ -47,7 +52,7 @@
         <form>
           <div ng-repeat="estTime in estTimes">
             <ul class="nav nav-pills" role="tablist" class="destination {{ estTime.color.toLowerCase() }}">
-              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a href="#">{{ estTime.destination }} <span class="badge">{{ formatTime(estTime.minutes) }}</span></a><i class="fa fa-bicycle"></i></li>
+              <li role="presentation" class="destination {{ estTime.color.toLowerCase() }}"><a ng-href="/destination/{{ estTime.abbr }}">{{ estTime.destination }} <span class="badge">{{ formatTime(estTime.minutes) }}</span></a><i class="fa fa-bicycle"></i></li>
             </ul>
           </div>
         </form>
